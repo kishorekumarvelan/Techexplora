@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techexplora – A Magical Leap in Hardware Learning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-glow: #00f0ff;
+      --accent: #9c27b0;
+      --bg-gradient-start: #0f0c29;
+      --bg-gradient-end: #302b63;
+      --hover-glow: 0 0 25px rgba(0, 255, 255, 0.4);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, var(--bg-gradient-start), var(--bg-gradient-end));
+      color: #f0f8ff;
+      overflow-x: hidden;
+      cursor: url('https://cdn-icons-png.flaticon.com/512/1077/1077035.png'), auto;
+    }
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    header {
+      text-align: center;
+      padding: 100px 20px 60px;
+      background: radial-gradient(circle, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+    }
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4rem;
+      background: linear-gradient(to right, #00f0ff, #9c27b0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: pulse 3s ease-in-out infinite;
+    }
+    header p {
+      font-size: 1.4rem;
+      margin-top: 15px;
+      color: #b2fefa;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .feature {
+      margin: 40px 0;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: var(--hover-glow);
+      position: relative;
+      transition: 0.4s ease;
+      cursor: pointer;
+      animation: floatSpell 6s ease-in-out infinite;
+    }
+    .feature:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 40px #00f0ff;
+    }
+    .hidden-content {
+      display: none;
+      margin-top: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .feature.open .hidden-content {
+      display: block;
+    }
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #c3fdff;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+    iframe {
+      width: 100%;
+      max-width: 900px;
+      border: none;
+      border-radius: 18px;
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.25);
+      margin-top: 30px;
+    }
+    .download-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #00f0ff, #9c27b0);
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #0ff;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+    .download-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #fff;
+    }
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 15px;
+      text-align: left;
+    }
+    th {
+      background-color: rgba(0,255,255,0.2);
+      font-weight: bold;
+      color: #fff;
+    }
+    td {
+      color: #e0f7fa;
+    }
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 0.9rem;
+      background-color: #000;
+      color: #bbb;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; }
+      50% { text-shadow: 0 0 20px #0ff, 0 0 30px #9c27b0; }
+    }
+    @keyframes floatSpell {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <audio id="magic-sound" src="https://www.fesliyanstudios.com/play-mp3/6510" preload="auto"></audio>
+
+  <header>
+    <h1>Techexplora</h1>
+    <p>“Where Magic Meets Machines” – A Revolutionary VR Hardware Lab</p>
+  </header>
+
+  <section>
+    <div class="feature">
+      <h2>🧩 The Real-World Problem (Education)</h2>
+      <div class="hidden-content">
+        <ul>
+          <li>⚠ Expensive physical labs inaccessible to many students</li>
+          <li>📚 Boring textbook-based learning for complex hardware</li>
+          <li>💥 Fear of damaging components blocks real experimentation</li>
+          <li>❌ No real-time interaction with components or intelligent guidance</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature">
+      <h2>✨ Magical Solution: Techexplora</h2>
+      <div class="hidden-content">
+        <p>Inspired by the world of Harry Potter and powered by futuristic tech, Techexplora is a fully immersive VR lab that brings computer hardware to life. Students can summon, manipulate, and understand every component using their hands and voice – just like casting spells in a magical world of machines.</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <h2>🚀 Enchanted Features</h2>
+      <div class="hidden-content">
+        <ul>
+          <li>🖐 Gesture-based magical control to assemble/disassemble parts</li>
+          <li>🗣 Voice spells like “Assemble”, “Disassemble”, or “Explore RAM”</li>
+          <li>🧠 AI-driven smart tutor explains parts with wizard-like narration</li>
+          <li>🎓 Two realms: Practical Room & Explore Room for guided mastery</li>
+          <li>💫 Animated effects and interactions for true magical realism</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature">
+      <h2>🎬 Live VR Experience</h2>
+      <div class="hidden-content">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/sF4HOZICx-I?si=lE9jvx_7bw5hLN9G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="feature">
+      <h2>🛠 Magical Tech Stack</h2>
+      <div class="hidden-content">
+        <ul>
+          <li>🕹 Unity + XR Interaction Toolkit for immersive hand-based interaction</li>
+          <li>🖐 Hand Tracking via Meta Quest / Leap Motion</li>
+          <li>🎨 Blender – 3D models designed with realism & animations</li>
+          <li>🧙‍♀ WIT.AI – Natural language understanding for magical voice control</li>
+          <li>🌐 Web dashboard for student analytics & access</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature">
+      <h2>🌟 Why It’s Different</h2>
+      <div class="hidden-content">
+        <table>
+          <tr>
+            <th>Criteria</th>
+            <th>Techexplora’s Strength</th>
+          </tr>
+          <tr>
+            <td>Social Impact</td>
+            <td>Makes hardware education accessible, immersive, and safe for all students—even in resource-limited schools.</td>
+          </tr>
+          <tr>
+            <td>Innovation</td>
+            <td>Combines VR + hand tracking + voice control + AI explanations. This mix is rare and original.</td>
+          </tr>
+          <tr>
+            <td>Feasibility</td>
+            <td>Can be built using Unity + XR Toolkit + AI APIs. Scalable across schools, colleges.</td>
+          </tr>
+          <tr>
+            <td>Inclusivity</td>
+            <td>Removes the barrier of physical labs. Even rural students can explore hardware freely.</td>
+          </tr>
+          <tr>
+            <td>Sustainability</td>
+            <td>One-time software that avoids recurring hardware damage costs. Can be reused across batches.</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="feature">
+      <h2>📈 Expected Outcomes</h2>
+      <div class="hidden-content">
+        <ul>
+          <li>🧠 Improved understanding of internal hardware design through immersive interaction</li>
+          <li>🧪 Increased curiosity and confidence in hands-on electronics assembly</li>
+          <li>🎓 Better engagement in classroom and lab settings with magical VR immersion</li>
+          <li>🌐 Broader access to hardware education in rural and under-resourced areas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature">
+      <h2>🎯 Target Audience</h2>
+      <div class="hidden-content">
+        <ul>
+          <li>🎓 <strong>Engineering Students</strong> – Dive into immersive hardware learning without real lab limitations.</li>
+          <li>🏫 <strong>Technical Training Institutes</strong> – Deliver practical VR lab experiences cost-effectively.</li>
+          <li>💡 <strong>EdTech Companies Focusing on VR</strong> – Integrate advanced, gamified hardware learning modules.</li>
+          <li>📘 <strong>Schools Introducing Early Hardware Exposure</strong> – Safely expose young learners to the world of electronics through fun interaction.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="https://heyzine.com/flip-book/f2953057c5.html" class="download-btn" download>📥Click on Project Overview</a>
+    </div>
+  </section>
+
+  <footer>
+    Made with Innovation by Abinaya Shree MS and Kishore Kumar V | Techexplora – Unlock Your Inner Tech Wizard © 2025
+  </footer>
+
+  <script>
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particles = Array.from({length: 100}, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      radius: Math.random() * 1.5 + 0.5,
+      dx: (Math.random() - 0.5) * 0.5,
+      dy: (Math.random() - 0.5) * 0.5
+    }));
+
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0,255,255,0.5)';
+        ctx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      });
+      requestAnimationFrame(drawParticles);
+    }
+    drawParticles();
+
+    const sound = document.getElementById('magic-sound');
+    document.querySelectorAll('.feature').forEach(block => {
+      block.addEventListener('click', () => {
+        block.classList.toggle('open');
+        sound.currentTime = 0;
+        sound.play();
+      });
+    });
+  </script>
+</body>
+</html>
